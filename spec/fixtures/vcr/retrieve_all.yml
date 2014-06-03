@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.statuscake.com/API/Tests?CUID=10395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Username:
+      - <USER>
+      Api:
+      - <APIKEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 03 Jun 2014 20:34:31 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.9
+      Set-Cookie:
+      - PHPSESSID=e2f536a09a70449ec0b0c3580cffdaaf; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '353'
+    body:
+      encoding: UTF-8
+      string: '[{"TestID":169662,"Paused":true,"TestType":"HTTP","WebsiteName":"google.com","ContactGroup":"All
+        Sites","ContactID":10395,"Public":0,"Status":"Up","Uptime":100,"Performance":0.178},{"TestID":169665,"Paused":true,"TestType":"HTTP","WebsiteName":"google.com","ContactGroup":"All
+        Sites","ContactID":10395,"Public":0,"Status":"","Uptime":0,"Performance":0}]'
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:34:34 GMT
+recorded_with: VCR 2.9.2

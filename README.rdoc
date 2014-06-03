@@ -1,0 +1,42 @@
+= status_cake
+
+StatusCake gem for Ruby.  See the StatusCake API documentation at http://kb.statuscake.com/api
+
+== Usage
+
+  @sc = StatusCake.new(:username => 'username', :api_key => 'apikey')
+
+== Logging
+
+Override the debug_output, see Net::HTTP#set_debug_output for options.
+
+  class StatusCake
+    debug_output $stdout
+  end
+
+=== Updating and Inserting Tests
+
+  response = @sc.update_test({
+    'WebsiteName'  => 'google.com',
+    'WebsiteURL'   => 'https://google.com',
+    'CheckRate'    => '300',
+    'ContactGroup' => '10395',
+    'TestType'     => 'HTTP',
+    'Paused'       => 1
+  })
+
+=== Retrieving Tests
+
+Please be aware that although filtering is supported on any criteria via the gem, only the CUID and Status are supported by the API and therefore filtering is done on the resultset.  If you have a large number of tests, you will probably want to group by CUID.
+
+  @sc.tests('CUID' => '10395', 'WebsiteURL' => 'https://mysite.example.com')
+
+=== Pausing/Unpausing Tests
+
+  t = @sc.tests('WebsiteName' => 'example.com')
+  @sc.pause_test(t)
+  @sc.unpause_test(t)
+
+== License
+
+Apache 2.0 License.  See LICENSE.txt for further details.
