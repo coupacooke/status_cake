@@ -38,7 +38,8 @@ Gem::Specification.new do |s|
     "spec/fixtures/vcr/retrieve_by_name.yml",
     "spec/fixtures/vcr/unpause_test.yml",
     "spec/spec_helper.rb",
-    "spec/status_cake/status_cake_spec.rb"
+    "spec/status_cake/status_cake_spec.rb",
+    "status_cake.gemspec"
   ]
   s.homepage = "http://github.com/coupacooke/status_cake"
   s.licenses = ["MIT"]
