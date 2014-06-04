@@ -6,14 +6,6 @@ StatusCake gem for Ruby.  See the StatusCake API documentation at http://kb.stat
 
   @sc = StatusCake.new(:username => 'username', :api_key => 'apikey')
 
-== Logging
-
-Override the debug_output, see Net::HTTP#set_debug_output for options.
-
-  class StatusCake
-    debug_output $stdout
-  end
-
 === Updating and Inserting Tests
 
   response = @sc.update_test({
@@ -36,6 +28,14 @@ Please be aware that although filtering is supported on any criteria via the gem
   t = @sc.tests('WebsiteName' => 'example.com')
   @sc.pause_test(t)
   @sc.unpause_test(t)
+
+== Logging
+
+Override the debug_output, see Net::HTTP#set_debug_output for options.
+
+  class StatusCake
+    debug_output $stdout
+  end
 
 == License
 
