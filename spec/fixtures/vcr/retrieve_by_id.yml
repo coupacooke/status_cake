@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.statuscake.com/API/Tests/Details?TestID=170051
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Username:
+      - <USER>
+      Api:
+      - <APIKEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 10 Jun 2014 20:06:20 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.9
+      Set-Cookie:
+      - PHPSESSID=4d7519cbc74b653b69a9b72f2f6e1b10; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '455'
+    body:
+      encoding: UTF-8
+      string: '{"Method":"GET","TestID":170051,"TestType":"HTTP","Paused":true,"WebsiteName":"google.com","ContactGroup":"All
+        Sites","ContactID":10395,"Status":"Up","Uptime":100,"CheckRate":3600,"Timeout":60,"LogoImage":"","WebsiteHost":"","NodeLocations":[""],"FindString":"","DoNotFind":false,"LastTested":"2014-06-10
+        19:21:19","NextLocation":"DA5","Processing":false,"ProcessingState":"Finished
+        Logging","ProcessingOn":"DA11","DownTimes":"0","Sensitive":false}'
+    http_version: 
+  recorded_at: Tue, 10 Jun 2014 20:06:24 GMT
+recorded_with: VCR 2.9.2

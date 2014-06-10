@@ -16,6 +16,11 @@ class StatusCake
     @auth = {'Username' => opts[:username], 'API' => opts[:api_key]}
   end
 
+  def find(id)
+    @opts = {headers:@auth, query:{ 'TestID' => id }}
+    respond(self.class.get("/Tests/Details", @opts))
+  end
+
   def tests(options={})
     # Hash#slice w/o activesupport
     query_opts  = options.select { |k,v| SUPPORTED_QUERIES.index(k) }

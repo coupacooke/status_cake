@@ -33,6 +33,14 @@ describe StatusCake do
       end
     end
 
+    it 'should be able to retrieve a test by id' do
+      VCR.use_cassette('retrieve_by_id') do
+        test = subject.find(170051)
+        expect(test).not_to be_nil
+        expect(test['WebsiteName']).to eq('google.com')
+      end
+    end
+
     it 'should be able to retrieve a test by name' do
       VCR.use_cassette('retrieve_by_name') do
         test = subject.tests('WebsiteName' => 'google.com', 'CUID' => '10395').first
