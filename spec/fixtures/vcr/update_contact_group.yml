@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.statuscake.com/API/ContactGroups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Username:
+      - <USER>
+      Api:
+      - <APIKEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 11 Jun 2014 21:19:18 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.9
+      Set-Cookie:
+      - PHPSESSID=7866b25bc852d98af4ce4379f5c7fa86; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '440'
+    body:
+      encoding: UTF-8
+      string: '[{"GroupName":"Test","Emails":["nothing@<USER>.com"],"Mobiles":"","Boxcar":"","Pushover":"","ContactID":10313,"DesktopAlert":0,"PingURL":""},{"GroupName":"All
+        Sites","Emails":["nothing@<USER>.com"],"Mobiles":"","Boxcar":"","Pushover":"","ContactID":10395,"DesktopAlert":0,"PingURL":""},{"GroupName":"Test
+        Contact Group API","Emails":["test@invalid.com"],"Mobiles":"","Boxcar":"","Pushover":"","ContactID":10564,"DesktopAlert":0,"PingURL":""}]'
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 21:19:22 GMT
+- request:
+    method: put
+    uri: https://www.statuscake.com/API/ContactGroups/Update
+    body:
+      encoding: UTF-8
+      string: ContactID=10564&GroupName=Test%20Contact%20Group%20API%20-%20Updated&Email=test.updated%40invalid.com
+    headers:
+      Username:
+      - <USER>
+      Api:
+      - <APIKEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 11 Jun 2014 21:19:19 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.9
+      Set-Cookie:
+      - PHPSESSID=80129dbbcbab25f6dcc1ea22bd66a261; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '72'
+    body:
+      encoding: UTF-8
+      string: '{"Success":true,"Issues":[],"Message":"Contact Group has been updated!"}'
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 21:19:23 GMT
+- request:
+    method: get
+    uri: https://www.statuscake.com/API/ContactGroups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Username:
+      - <USER>
+      Api:
+      - <APIKEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 11 Jun 2014 21:19:21 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.9
+      Set-Cookie:
+      - PHPSESSID=d6365a0832a8517504b5bf1355b38003; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '458'
+    body:
+      encoding: UTF-8
+      string: '[{"GroupName":"Test","Emails":["nothing@<USER>.com"],"Mobiles":"","Boxcar":"","Pushover":"","ContactID":10313,"DesktopAlert":0,"PingURL":""},{"GroupName":"All
+        Sites","Emails":["nothing@<USER>.com"],"Mobiles":"","Boxcar":"","Pushover":"","ContactID":10395,"DesktopAlert":0,"PingURL":""},{"GroupName":"Test
+        Contact Group API - Updated","Emails":["test.updated@invalid.com"],"Mobiles":"","Boxcar":"","Pushover":"","ContactID":10564,"DesktopAlert":0,"PingURL":""}]'
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 21:19:26 GMT
+recorded_with: VCR 2.9.2

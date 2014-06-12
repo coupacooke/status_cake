@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.statuscake.com/API/ContactGroups/Update
+    body:
+      encoding: UTF-8
+      string: GroupName=Test%20Contact%20Group%20API&Email=test%40invalid.com
+    headers:
+      Username:
+      - <USER>
+      Api:
+      - <APIKEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 11 Jun 2014 21:19:15 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.9
+      Set-Cookie:
+      - PHPSESSID=16001fd974e6af6fe12e5c36d17f9ead; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '161'
+    body:
+      encoding: UTF-8
+      string: '{"Success":true,"Message":"Test Inserted","Issues":[],"Data":{"Email":"test@invalid.com","GroupName":"Test
+        Contact Group API","Client":"14818"},"InsertID":10564}'
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 21:19:20 GMT
+recorded_with: VCR 2.9.2

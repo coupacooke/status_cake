@@ -16,9 +16,22 @@ class StatusCake
     @auth = {'Username' => opts[:username], 'API' => opts[:api_key]}
   end
 
-  def find(id)
-    @opts = {headers:@auth, query:{ 'TestID' => id }}
-    respond(self.class.get("/Tests/Details", @opts))
+  def contact_groups(options={})
+    @opts = {headers:@auth}
+    filter_opts = options
+
+    contact_groups = respond(self.class.get("/ContactGroups", @opts)) || []
+
+    unless filter_opts.empty?
+      contact_groups.find_all { |t| (t & filter_opts) == filter_opts }
+    else
+      contact_groups
+    end
+  end
+
+  def update_contact_group(contact_group={})
+    @opts = {headers:@auth, body:contact_group }
+    respond(self.class.put("/ContactGroups/Update",@opts))
   end
 
   def tests(options={})
@@ -27,13 +40,18 @@ class StatusCake
     filter_opts = options.reject { |k,v| SUPPORTED_QUERIES.index(k) }
 
     @opts = {headers:@auth, query:query_opts}
-    tests = respond(self.class.get("/Tests", @opts))
+    tests = respond(self.class.get("/Tests", @opts)) || []
 
     unless filter_opts.empty?
       tests.find_all { |t| (t & filter_opts) == filter_opts }
     else
       tests
     end
+  end
+
+  def find_test(id)
+    @opts = {headers:@auth, query:{ 'TestID' => id }}
+    respond(self.class.get("/Tests/Details", @opts))
   end
 
   def update_test(test={})
