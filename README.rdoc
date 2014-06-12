@@ -29,6 +29,18 @@ Please be aware that although filtering is supported on any criteria via the gem
   @sc.pause_test(t)
   @sc.unpause_test(t)
 
+=== Retrieving Contact Groups
+
+  @sc.contact_groups('GroupName' => 'Production')
+
+=== Updating and Insert Contact Groups
+
+  response = @sc.update_contact_group({
+    'ContactID' => 12345,
+    'GroupName' => 'Test Group',
+    'Email' => 'updated@invalid.com'
+  })
+
 == Logging
 
 Override the debug_output, see Net::HTTP#set_debug_output for options.
